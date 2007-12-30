@@ -1,7 +1,7 @@
 Summary:	Library for importing and converting Corel WordPerfect(tm) Graphics images
 Name:		libwpg
 Version:	0.1.2
-Release:	0.1
+Release:	1
 License:	LGPL v2+
 Group:		Libraries
 URL:		http://libwpg.sourceforge.net/
@@ -9,7 +9,6 @@ Source0:	http://dl.sourceforge.net/libwpg/%{name}-%{version}.tar.gz
 # Source0-md5:	317cee27f380c394c6e4eec02d45cab8
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
-BuildRequires:	libwpd-devel >= 0.8
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -25,7 +24,6 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libwpg
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libstdc++-devel
-Requires:	libwpg-devel >= 0.8
 
 %description devel
 Header files for libwpg library.
@@ -78,6 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/lib*.so.1
 
 %files devel
 %defattr(644,root,root,755)
