@@ -5,7 +5,7 @@ Release:	0.1
 License:	LGPL v2+
 Group:		Libraries
 URL:		http://libwpg.sourceforge.net/
-Source0:	http://download.go-oo.org/SRC680/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/libwpg/%{name}-%{version}.tar.gz
 # Source0-md5:	317cee27f380c394c6e4eec02d45cab8
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
