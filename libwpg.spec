@@ -86,20 +86,26 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/lib*.so.1
+%doc AUTHORS ChangeLog
+%attr(755,root,root) %{_libdir}/libwpg-0.1.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libwpg-0.1.so.1
+%attr(755,root,root) %{_libdir}/libwpg-stream-0.1.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libwpg-stream-0.1.so.1
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/libwpg*
-%{_pkgconfigdir}/*.pc
+%attr(755,root,root) %{_libdir}/libwpg-0.1.so
+%attr(755,root,root) %{_libdir}/libwpg-stream-0.1.so
+%{_libdir}/libwpg-0.1.la
+%{_libdir}/libwpg-stream-0.1.la
+%{_includedir}/libwpg-0.1
+%{_pkgconfigdir}/libwpg-0.1.pc
+%{_pkgconfigdir}/libwpg-stream-0.1.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libwpg-0.1.a
+%{_libdir}/libwpg-stream-0.1.a
 
 %files tools
 %defattr(644,root,root,755)
