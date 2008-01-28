@@ -1,12 +1,13 @@
-Summary:	Library for importing and converting Corel WordPerfect(tm) Graphics images
+Summary:	Library for importing and converting Corel WordPerfect(TM) Graphics images
+Summary(pl.UTF-8):	Biblioteka do importowania i konwersji obrazów Corel WordPerfect Graphics
 Name:		libwpg
 Version:	0.1.2
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
-URL:		http://libwpg.sourceforge.net/
 Source0:	http://dl.sourceforge.net/libwpg/%{name}-%{version}.tar.gz
 # Source0-md5:	317cee27f380c394c6e4eec02d45cab8
+URL:		http://libwpg.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
 BuildRequires:	pkgconfig
@@ -15,8 +16,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Libwpg project is a collection of library and tools to work with
 graphics in WPG (WordPerfect Graphics) format. WPG is the format used
-among others in Corel sofware, such as WordPerfect(tm) and
-Presentations(tm).
+among others in Corel software, such as WordPerfect(TM) and
+Presentations(TM).
+
+%description -l pl.UTF-8
+Projekt libwpg to zestaw biblioteki i narzędzi do pracy z obrazami w
+formacie WPG (WordPerfect Graphics). WPG to format używany między
+innymi w programach firmy Corel, takich jak WordPerfect(TM) i
+Presentations(TM).
 
 %package devel
 Summary:	Header files for libwpg library
@@ -45,11 +52,16 @@ Statyczna biblioteka libwpg.
 
 %package tools
 Summary:	Tools to transform WordPerfect Graphics into other formats
+Summary(pl.UTF-8):	Narzędzia do konwersji plików z formatu WordPerfect Graphics do innych
 Group:		Applications/Publishing
 Requires:	%{name} = %{version}-%{release}
 
 %description tools
 Tools to transform WordPerfect Graphics (WPG) into other formats.
+
+%description tools -l pl.UTF-8
+Narzędzia do konwersji plików z formatu WordPerfect Graphics do innych
+formatów.
 
 %prep
 %setup -q
