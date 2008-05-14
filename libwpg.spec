@@ -10,6 +10,7 @@ Source0:	http://dl.sourceforge.net/libwpg/%{name}-%{version}.tar.gz
 URL:		http://libwpg.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
+BuildRequires:	libwpd-devel >= 0.8
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
