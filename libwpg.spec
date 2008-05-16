@@ -12,6 +12,7 @@ BuildRequires:	automake
 BuildRequires:	libstdc++-devel
 BuildRequires:	libwpd-devel >= 0.8
 BuildRequires:	pkgconfig
+Requires:	libwpd >= 0.8
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -32,6 +33,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libwpg
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libstdc++-devel
+Requires:	libwpd-devel >= 0.8
 
 %description devel
 Header files for libwpg library.
