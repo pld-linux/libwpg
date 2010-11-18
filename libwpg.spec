@@ -1,18 +1,18 @@
 Summary:	Library for importing and converting Corel WordPerfect(TM) Graphics images
 Summary(pl.UTF-8):	Biblioteka do importowania i konwersji obrazów Corel WordPerfect Graphics
 Name:		libwpg
-Version:	0.1.3
+Version:	0.2.0
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/libwpg/%{name}-%{version}.tar.bz2
-# Source0-md5:	1069ad84fdf65f1c47b63b639137613f
+Source0:	http://downloads.sourceforge.net/libwpg/%{name}-%{version}.tar.bz2
+# Source0-md5:	5ba6a61a2f66dfd5fee8cdd4cd262a37
 URL:		http://libwpg.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
-BuildRequires:	libwpd-devel >= 0.8
+BuildRequires:	libwpd-devel >= 0.9
 BuildRequires:	pkgconfig
-Requires:	libwpd >= 0.8
+Requires:	libwpd >= 0.9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,7 +33,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libwpg
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libstdc++-devel
-Requires:	libwpd-devel >= 0.8
+Requires:	libwpd-devel >= 0.9
 
 %description devel
 Header files for libwpg library.
@@ -90,25 +90,26 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog
-%attr(755,root,root) %{_libdir}/libwpg-0.1.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libwpg-0.1.so.1
-%attr(755,root,root) %{_libdir}/libwpg-stream-0.1.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libwpg-stream-0.1.so.1
+%attr(755,root,root) %{_libdir}/libwpg-0.2.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libwpg-0.2.so.2
+#%attr(755,root,root) %{_libdir}/libwpg-stream-0.2.so.*.*.*
+#%attr(755,root,root) %ghost %{_libdir}/libwpg-stream-0.2.so.1
+
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libwpg-0.1.so
-%attr(755,root,root) %{_libdir}/libwpg-stream-0.1.so
-%{_libdir}/libwpg-0.1.la
-%{_libdir}/libwpg-stream-0.1.la
-%{_includedir}/libwpg-0.1
-%{_pkgconfigdir}/libwpg-0.1.pc
-%{_pkgconfigdir}/libwpg-stream-0.1.pc
+%attr(755,root,root) %{_libdir}/libwpg-0.2.so
+#%attr(755,root,root) %{_libdir}/libwpg-stream-0.2.so
+%{_libdir}/libwpg-0.2.la
+#%{_libdir}/libwpg-stream-0.2.la
+%{_includedir}/libwpg-0.2
+%{_pkgconfigdir}/libwpg-0.2.pc
+#%{_pkgconfigdir}/libwpg-stream-0.2.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libwpg-0.1.a
-%{_libdir}/libwpg-stream-0.1.a
+%{_libdir}/libwpg-0.2.a
+#%{_libdir}/libwpg-stream-0.2.a
 
 %files tools
 %defattr(644,root,root,755)
