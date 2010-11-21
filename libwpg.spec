@@ -43,7 +43,7 @@ Pliki nagłówkowe biblioteki libwpg.
 
 %package static
 Summary:	Static libwpg library
-Summary(pl):	Statyczna biblioteka libwpg
+Summary(pl.UTF-8):	Statyczna biblioteka libwpg
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -70,7 +70,7 @@ formatów.
 %setup -q
 
 %build
-cp /usr/share/automake/config.sub .
+cp -f /usr/share/automake/config.sub .
 %configure \
 	--enable-static
 %{__make}
@@ -89,27 +89,21 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog
+%doc AUTHORS ChangeLog NEWS
 %attr(755,root,root) %{_libdir}/libwpg-0.2.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libwpg-0.2.so.2
-#%attr(755,root,root) %{_libdir}/libwpg-stream-0.2.so.*.*.*
-#%attr(755,root,root) %ghost %{_libdir}/libwpg-stream-0.2.so.1
 
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libwpg-0.2.so
-#%attr(755,root,root) %{_libdir}/libwpg-stream-0.2.so
 %{_libdir}/libwpg-0.2.la
-#%{_libdir}/libwpg-stream-0.2.la
 %{_includedir}/libwpg-0.2
 %{_pkgconfigdir}/libwpg-0.2.pc
-#%{_pkgconfigdir}/libwpg-stream-0.2.pc
 
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libwpg-0.2.a
-#%{_libdir}/libwpg-stream-0.2.a
 
 %files tools
 %defattr(644,root,root,755)
