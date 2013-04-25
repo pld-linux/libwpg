@@ -1,17 +1,19 @@
 Summary:	Library for importing and converting Corel WordPerfect(TM) Graphics images
 Summary(pl.UTF-8):	Biblioteka do importowania i konwersji obrazów Corel WordPerfect Graphics
 Name:		libwpg
-Version:	0.2.0
-Release:	4
-License:	LGPL v2+
+Version:	0.2.2
+Release:	1
+License:	MPL v2.0 or LGPL v2.1+
 Group:		Libraries
-Source0:	http://downloads.sourceforge.net/libwpg/%{name}-%{version}.tar.bz2
-# Source0-md5:	5ba6a61a2f66dfd5fee8cdd4cd262a37
+Source0:	http://downloads.sourceforge.net/libwpg/%{name}-%{version}.tar.xz
+# Source0-md5:	f5c4c22e291e3313891c88b3fe6d565d
 URL:		http://libwpg.sourceforge.net/
-BuildRequires:	automake
+BuildRequires:	automake >= 1:1.11
 BuildRequires:	libstdc++-devel
 BuildRequires:	libwpd-devel >= 0.9
-BuildRequires:	pkgconfig
+BuildRequires:	pkgconfig >= 1:0.20
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 Requires:	libwpd >= 0.9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -72,6 +74,7 @@ formatów.
 %build
 cp -f /usr/share/automake/config.sub .
 %configure \
+	--disable-silent-rules \
 	--enable-static
 %{__make}
 
@@ -82,6 +85,8 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
+# packages as %doc in -evel
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}/html
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -95,9 +100,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libwpg-0.2.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libwpg-0.2.so.2
 
-
 %files devel
 %defattr(644,root,root,755)
+%doc docs/doxygen/html/*
 %attr(755,root,root) %{_libdir}/libwpg-0.2.so
 %{_includedir}/libwpg-0.2
 %{_pkgconfigdir}/libwpg-0.2.pc
