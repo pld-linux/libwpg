@@ -1,20 +1,25 @@
+#
+# Conditional build:
+%bcond_without	static_libs	# static library
+#
 Summary:	Library for importing and converting Corel WordPerfect(TM) Graphics images
 Summary(pl.UTF-8):	Biblioteka do importowania i konwersji obrazów Corel WordPerfect Graphics
 Name:		libwpg
-Version:	0.3.0
-Release:	2
+Version:	0.3.1
+Release:	1
 License:	MPL v2.0 or LGPL v2.1+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/libwpg/%{name}-%{version}.tar.xz
-# Source0-md5:	00f2db157d130c1334ef36da2e9f20a3
+# Source0-md5:	62cf22e05cc6afa3f7384e9487cd255d
 URL:		http://libwpg.sourceforge.net/
 BuildRequires:	doxygen
-BuildRequires:	librevenge-devel >= 0.0
+BuildRequires:	librevenge-devel >= 0.0.1
 BuildRequires:	libstdc++-devel
 BuildRequires:	libwpd-devel >= 0.10
 BuildRequires:	pkgconfig >= 1:0.20
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+Requires:	librevenge >= 0.0.1
 Requires:	libwpd >= 0.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -35,7 +40,7 @@ Summary:	Header files for libwpg library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libwpg
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	librevenge-devel >= 0.0
+Requires:	librevenge-devel >= 0.0.1
 Requires:	libstdc++-devel
 Requires:	libwpd-devel >= 0.10
 
@@ -87,7 +92,7 @@ formatów.
 %build
 %configure \
 	--disable-silent-rules \
-	--enable-static
+	%{?with_static_libs:--enable-static}
 %{__make}
 
 %install
@@ -118,9 +123,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/libwpg-0.3
 %{_pkgconfigdir}/libwpg-0.3.pc
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libwpg-0.3.a
+%endif
 
 %files apidocs
 %defattr(644,root,root,755)
