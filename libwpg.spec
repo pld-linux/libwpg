@@ -1,12 +1,12 @@
 #
 # Conditional build:
 %bcond_without	static_libs	# static library
-#
+
 Summary:	Library for importing and converting Corel WordPerfect(TM) Graphics images
 Summary(pl.UTF-8):	Biblioteka do importowania i konwersji obrazów Corel WordPerfect Graphics
 Name:		libwpg
 Version:	0.3.1
-Release:	1
+Release:	2
 License:	MPL v2.0 or LGPL v2.1+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/libwpg/%{name}-%{version}.tar.xz
@@ -66,6 +66,9 @@ Statyczna biblioteka libwpg.
 Summary:	API documentation for libwpg library
 Summary(pl.UTF-8):	Dokumentacja API biblioteki libwpg
 Group:		Documentation
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 API documentation for libwpg library.
