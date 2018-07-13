@@ -14,7 +14,7 @@ Source0:	http://downloads.sourceforge.net/libwpg/%{name}-%{version}.tar.xz
 URL:		http://libwpg.sourceforge.net/
 BuildRequires:	doxygen
 BuildRequires:	librevenge-devel >= 0.0.1
-BuildRequires:	libstdc++-devel
+BuildRequires:	libstdc++-devel >= 6:4.7
 BuildRequires:	libwpd-devel >= 0.10
 BuildRequires:	pkgconfig >= 1:0.20
 BuildRequires:	tar >= 1:1.22
@@ -41,7 +41,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libwpg
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	librevenge-devel >= 0.0.1
-Requires:	libstdc++-devel
+Requires:	libstdc++-devel >= 6:4.7
 Requires:	libwpd-devel >= 0.10
 
 %description devel
@@ -105,7 +105,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
-# packages as %doc in -evel
+# packages as %doc in -devel
 %{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}/html
 
 %clean
