@@ -5,13 +5,13 @@
 Summary:	Library for importing and converting Corel WordPerfect(TM) Graphics images
 Summary(pl.UTF-8):	Biblioteka do importowania i konwersji obrazów Corel WordPerfect Graphics
 Name:		libwpg
-Version:	0.3.3
+Version:	0.3.4
 Release:	1
 License:	MPL v2.0 or LGPL v2.1+
 Group:		Libraries
-Source0:	http://downloads.sourceforge.net/libwpg/%{name}-%{version}.tar.xz
-# Source0-md5:	c3727b1196506fc77f6f916866884411
-URL:		http://libwpg.sourceforge.net/
+Source0:	https://downloads.sourceforge.net/libwpg/%{name}-%{version}.tar.xz
+# Source0-md5:	8f3ef77c8f650b299693c4b79c59483a
+URL:		https://libwpg.sourceforge.net/
 BuildRequires:	doxygen
 BuildRequires:	librevenge-devel >= 0.0.1
 BuildRequires:	libstdc++-devel >= 6:4.7
